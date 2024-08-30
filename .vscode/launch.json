@@ -1,0 +1,60 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C++: Debug Active File",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "C++: Debug Build Active File"
+        },
+        {
+            "name": "C++: Debug All",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/${input:chooseProgram}",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "C++: Debug Build All"
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}"
+        },
+        {
+            "name": "Python: Hello World Example",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/python/01_basics/examples/hello_world.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/python/01_basics/examples"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "chooseProgram",
+            "type": "pickString",
+            "description": "Select the program to debug",
+            "options": [
+                "hello_world",
+                "data_types",
+                "control_structures"
+            ],
+            "default": "hello_world"
+        }
+    ]
+}
