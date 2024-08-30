@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>taschenrechner_benutzerhandbuch</title>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="markdown_styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markdown.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+<div class="container" style="max-width: 1200px;">
+<h1 id="benutzerhandbuch-für-den-taschenrechner">Benutzerhandbuch für den Taschenrechner</h1>
+<ol type="1">
+<li>Programmstart
+<ul>
+<li>Kompilieren Sie das Programm und führen Sie die ausführbare Datei aus.</li>
+<li>Das Hauptmenü wird angezeigt.</li>
+</ul></li>
+<li>Hauptmenü
+<ul>
+<li>Wählen Sie eine Option durch Eingabe der entsprechenden Nummer:
+<ol type="1">
+<li>Grundrechenarten</li>
+<li>Erweiterte Funktionen</li>
+<li>Verlauf anzeigen</li>
+<li>Beenden</li>
+</ol></li>
+</ul></li>
+<li>Grundrechenarten
+<ul>
+<li>Geben Sie die erste Zahl ein.</li>
+<li>Wählen Sie den Operator (+, -, *, /).</li>
+<li>Geben Sie die zweite Zahl ein.</li>
+<li>Das Ergebnis wird angezeigt und im Verlauf gespeichert.</li>
+</ul></li>
+<li>Erweiterte Funktionen
+<ul>
+<li>Wählen Sie eine Funktion aus dem Untermenü:
+<ol type="1">
+<li>Quadratwurzel</li>
+<li>Potenz</li>
+<li>Absolutwert</li>
+<li>Zurück zum Hauptmenü</li>
+</ol></li>
+<li>Geben Sie die erforderliche(n) Zahl(en) ein.</li>
+<li>Das Ergebnis wird angezeigt und im Verlauf gespeichert.</li>
+</ul></li>
+<li>Verlauf anzeigen
+<ul>
+<li>Alle bisher durchgeführten Berechnungen werden angezeigt.</li>
+<li>Drücken Sie eine beliebige Taste, um zum Hauptmenü zurückzukehren.</li>
+</ul></li>
+<li>Beenden
+<ul>
+<li>Das Programm wird beendet.</li>
+</ul></li>
+</ol>
+<p>Tipps:</p>
+<ul>
+<li>Geben Sie nur gültige Zahlen ein. Das Programm validiert Ihre Eingaben.</li>
+<li>Bei Division durch Null erhalten Sie eine Fehlermeldung.</li>
+<li>Der Verlauf wird nur für die aktuelle Sitzung gespeichert.</li>
+</ul>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    if (typeof Prism !== 'undefined') Prism.highlightAll();
+    if (typeof MathJax !== 'undefined') MathJax.typeset();
+  });
+</script>
+</body>
+</html>

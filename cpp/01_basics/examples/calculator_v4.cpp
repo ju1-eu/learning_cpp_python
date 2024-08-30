@@ -1,0 +1,121 @@
+// calculator.cpp (mit Verlaufsprotokollierung)
+#include <iostream>
+#include <vector>
+#include <string>
+
+struct Calculation
+{
+    double num1, num2, result;
+    char operation;
+};
+
+double add(double a, double b) { return a + b; }
+double subtract(double a, double b) { return a - b; }
+double multiply(double a, double b) { return a * b; }
+double divide(double a, double b)
+{
+    if (b != 0)
+        return a / b;
+    throw std::runtime_error("Division durch Null!");
+}
+
+bool isValidNumber(const std::string &str)
+{
+    try
+    {
+        std::stod(str);
+        return true;
+    }
+    catch (...)
+    {
+        return false;
+    }
+}
+
+double getNumber(const std::string &prompt)
+{
+    std::string input;
+    while (true)
+    {
+        std::cout << prompt;
+        std::cin >> input;
+        if (isValidNumber(input))
+        {
+            return std::stod(input);
+        }
+        std::cout << "Ungültige Eingabe. Bitte geben Sie eine Zahl ein." << std::endl;
+    }
+}
+
+char getOperation()
+{
+    char op;
+    std::cout << "Wählen Sie eine Operation (+, -, *, /): ";
+    std::cin >> op;
+    return op;
+}
+
+void displayHistory(const std::vector<Calculation> &history)
+{
+    std::cout << "Berechnungsverlauf:" << std::endl;
+    for (const auto &calc : history)
+    {
+        std::cout << calc.num1 << " " << calc.operation << " " << calc.num2 << " = " << calc.result << std::endl;
+    }
+}
+
+int main()
+{
+    std::vector<Calculation> history;
+
+    while (true)
+    {
+        double num1 = getNumber("Geben Sie die erste Zahl ein: ");
+        double num2 = getNumber("Geben Sie die zweite Zahl ein: ");
+        char operation = getOperation();
+
+        try
+        {
+            double result;
+            switch (operation)
+            {
+            case '+':
+                result = add(num1, num2);
+                break;
+            case '-':
+                result = subtract(num1, num2);
+                break;
+            case '*':
+                result = multiply(num1, num2);
+                break;
+            case '/':
+                result = divide(num1, num2);
+                break;
+            default:
+                throw std::runtime_error("Ungültige Operation!");
+            }
+            std::cout << "Ergebnis: " << result << std::endl;
+
+            history.push_back({num1, num2, result, operation});
+        }
+        catch (const std::exception &e)
+        {
+            std::cout << "Fehler: " << e.what() << std::endl;
+        }
+
+        char choice;
+        std::cout << "Möchten Sie den Verlauf anzeigen? (j/n): ";
+        std::cin >> choice;
+        if (choice == 'j' || choice == 'J')
+        {
+            displayHistory(history);
+        }
+
+        std::cout << "Möchten Sie eine weitere Berechnung durchführen? (j/n): ";
+        std::cin >> choice;
+        if (choice != 'j' && choice != 'J')
+            break;
+    }
+
+    return 0;
+}

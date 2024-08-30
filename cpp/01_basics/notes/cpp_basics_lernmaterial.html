@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>cpp_basics_lernmaterial</title>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="markdown_styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markdown.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+<div class="container" style="max-width: 1200px;">
+<h1 id="lernmaterial-zu-c-basics">Lernmaterial zu C++ Basics</h1>
+<ul>
+<li><a href="#lernmaterial-zu-c-basics">Lernmaterial zu C++ Basics</a>
+<ul>
+<li><a href="#zusammenfassung">Zusammenfassung</a></li>
+<li><a href="#notizen">Notizen</a></li>
+<li><a href="#beispiele">Beispiele</a></li>
+</ul></li>
+</ul>
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+<ol type="1">
+<li><strong>Syntax und Datentypen</strong>
+<ul>
+<li>Grundlegende Syntax (Semikolons, Blöcke)</li>
+<li>Primitive Datentypen (int, float, double, char, bool)</li>
+<li>Variablendeklaration und -initialisierung</li>
+<li>Konstanten (const)</li>
+<li>Typenumwandlung (implizit und explizit)</li>
+</ul></li>
+<li><strong>Kontrollstrukturen</strong>
+<ul>
+<li>Verzweigungen (if-else, switch-case)</li>
+<li>Schleifen (for, while, do-while)</li>
+<li>Break und continue</li>
+<li>Logische Operatoren (&amp;&amp;, ||, !)</li>
+</ul></li>
+<li><strong>Funktionen</strong>
+<ul>
+<li>Funktionsdeklaration und -definition</li>
+<li>Parameter und Rückgabewerte</li>
+<li>Überladung von Funktionen</li>
+<li>Inline-Funktionen</li>
+<li>Rekursion</li>
+</ul></li>
+<li><strong>Grundlegende Datenstrukturen</strong>
+<ul>
+<li>Arrays (eindimensional und mehrdimensional)</li>
+<li>std::vector</li>
+<li>std::string</li>
+<li>Einführung in die STL (Standard Template Library)</li>
+</ul></li>
+</ol>
+<h2 id="notizen">Notizen</h2>
+<ol type="1">
+<li><p><strong>Syntax und Datentypen</strong></p>
+<ul>
+<li>C++ ist eine case-sensitive Sprache</li>
+<li>Jede Anweisung endet mit einem Semikolon</li>
+<li>Codeblöcke werden durch geschweifte Klammern {} begrenzt</li>
+<li><strong>Hauptdatentypen</strong>:
+<ul>
+<li>int: Ganzzahlen (4 Bytes, <span class="math inline">\(-2^{31} \text{ bis } 2^{31-1}\)</span>)</li>
+<li>float: Gleitkommazahlen einfacher Genauigkeit (4 Bytes)</li>
+<li>double: Gleitkommazahlen doppelter Genauigkeit (8 Bytes)</li>
+<li>char: Einzelne Zeichen (1 Byte)</li>
+<li>bool: Wahrheitswerte (true oder false)</li>
+</ul></li>
+<li>Variablendeklaration: <code>Typ Name;</code></li>
+<li>Variableninitialisierung: <code>Typ Name = Wert;</code></li>
+<li>Konstanten mit ‘const’ deklarieren: <code>const int MAX_VALUE = 100</code>;</li>
+<li>Implizite Typenumwandlung: <code>int zu float</code></li>
+<li>Explizite Typenumwandlung: <code>static_cast&lt;neuer_typ&gt;(variable)</code></li>
+</ul></li>
+<li><p><strong>Kontrollstrukturen</strong></p>
+<ul>
+<li><p>if-else Syntax:</p>
+<pre class="cpp"><code>if (Bedingung) {
+    // Code
+} else if (Bedingung) {
+    // Code
+} else {
+    // Code
+}</code></pre></li>
+<li><p>switch-case Syntax:</p>
+<pre class="cpp"><code>switch (variable) {
+    case Wert1:
+        // Code
+        break;
+    case Wert2:
+        // Code
+        break;
+    default:
+        // Code
+}</code></pre></li>
+<li><p>for-Schleife: for (Initialisierung; Bedingung; Inkrementierung) { }</p></li>
+<li><p>while-Schleife: while (Bedingung) { }</p></li>
+<li><p>do-while-Schleife: do { } while (Bedingung);</p></li>
+<li><p>break: Beendet die aktuelle Schleife oder switch-Anweisung</p></li>
+<li><p>continue: Springt zum nächsten Schleifendurchlauf</p></li>
+<li><p>Logische Operatoren: &amp;&amp; (und), || (oder), ! (nicht)</p></li>
+</ul></li>
+<li><p><strong>Funktionen</strong></p>
+<ul>
+<li><p>Funktionsdeklaration: Rückgabetyp Funktionsname(Parameter);</p></li>
+<li><p>Funktionsdefinition:</p>
+<pre class="cpp"><code>Rückgabetyp Funktionsname(Parameter) {
+    // Funktionskörper
+    return Wert;
+}</code></pre></li>
+<li><p>Void-Funktionen haben keinen Rückgabewert</p></li>
+<li><p>Parameterübergabe: by value, by reference (&amp;), by pointer (*)</p></li>
+<li><p>Überladung: Mehrere Funktionen mit gleichem Namen, aber unterschiedlichen Parametern</p></li>
+<li><p>Inline-Funktionen: inline vor der Funktionsdeklaration für kleine, häufig verwendete Funktionen</p></li>
+<li><p>Rekursion: Funktion ruft sich selbst auf</p></li>
+</ul></li>
+<li><p><strong>Grundlegende Datenstrukturen</strong></p>
+<pre class="cpp"><code>- Arrays: Typ Name[Größe];
+- Mehrdimensionale Arrays: Typ Name[Größe1][Größe2];
+- std::vector: Dynamisches Array aus der STL
+    #include &lt;vector&gt;
+    std::vector&lt;Typ&gt; Name;
+- std::string: String-Klasse aus der STL
+    #include &lt;string&gt;
+    std::string Name;
+- STL: Sammlung von Containerklassen, Algorithmen und Funktoren</code></pre></li>
+</ol>
+<h2 id="beispiele">Beispiele</h2>
+<ol type="1">
+<li><p><strong>Variablen und Datentypen</strong>:</p>
+<pre class="cpp"><code>#include &lt;iostream&gt;
+
+int main() {
+    int age = 25;
+    double height = 1.75;
+    char grade = &#39;A&#39;;
+    bool isStudent = true;
+
+    std::cout &lt;&lt; &quot;Age: &quot; &lt;&lt; age &lt;&lt; std::endl;
+    std::cout &lt;&lt; &quot;Height: &quot; &lt;&lt; height &lt;&lt; &quot; m&quot; &lt;&lt; std::endl;
+    std::cout &lt;&lt; &quot;Grade: &quot; &lt;&lt; grade &lt;&lt; std::endl;
+    std::cout &lt;&lt; &quot;Is student: &quot; &lt;&lt; (isStudent ? &quot;Yes&quot; : &quot;No&quot;) &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre></li>
+<li><p><strong>Kontrollstrukturen</strong>:</p>
+<pre class="cpp"><code>#include &lt;iostream&gt;
+
+int main() {
+    int number;
+    std::cout &lt;&lt; &quot;Enter a number: &quot;;
+    std::cin &gt;&gt; number;
+
+    if (number &gt; 0) {
+        std::cout &lt;&lt; &quot;Positive number&quot; &lt;&lt; std::endl;
+    } else if (number &lt; 0) {
+        std::cout &lt;&lt; &quot;Negative number&quot; &lt;&lt; std::endl;
+    } else {
+        std::cout &lt;&lt; &quot;Zero&quot; &lt;&lt; std::endl;
+    }
+
+    for (int i = 1; i &lt;= 5; i++) {
+        std::cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre></li>
+<li><p><strong>Funktionen</strong>:</p>
+<pre class="cpp"><code>#include &lt;iostream&gt;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+void printMessage(std::string message) {
+    std::cout &lt;&lt; message &lt;&lt; std::endl;
+}
+
+int main() {
+    int result = add(5, 3);
+    std::cout &lt;&lt; &quot;5 + 3 = &quot; &lt;&lt; result &lt;&lt; std::endl;
+
+    printMessage(&quot;Hello, C++!&quot;);
+
+    return 0;
+}</code></pre></li>
+<li><p><strong>Datenstrukturen</strong>:</p>
+<pre class="cpp"><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+
+int main() {
+    int arr[3] = {1, 2, 3};
+    std::vector&lt;int&gt; vec = {4, 5, 6};
+    std::string str = &quot;C++ Basics&quot;;
+
+    std::cout &lt;&lt; &quot;Array: &quot;;
+    for (int i = 0; i &lt; 3; i++) {
+        std::cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+
+    std::cout &lt;&lt; &quot;Vector: &quot;;
+    for (int num : vec) {
+        std::cout &lt;&lt; num &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+
+    std::cout &lt;&lt; &quot;String: &quot; &lt;&lt; str &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre></li>
+</ol>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    if (typeof Prism !== 'undefined') Prism.highlightAll();
+    if (typeof MathJax !== 'undefined') MathJax.typeset();
+  });
+</script>
+</body>
+</html>

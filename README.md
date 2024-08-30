@@ -1,5 +1,14 @@
 # C++ und Python für KI - Lernprojekt
 
+- [C++ und Python für KI - Lernprojekt](#c-und-python-für-ki---lernprojekt)
+  - [Lernplan](#lernplan)
+  - [Ordnerstruktur](#ordnerstruktur)
+  - [Inhalt](#inhalt)
+  - [Erste Schritte](#erste-schritte)
+  - [Ressourcen](#ressourcen)
+  - [Fortschritt](#fortschritt)
+  - [Beitrag](#beitrag)
+
 Dieses Repository enthält Materialien und Projekte für einen 6-monatigen Lernplan zum Erwerb fortgeschrittener Kenntnisse in C++ (bis C++23) und Python mit Fokus auf künstliche Intelligenz (KI).
 
 ## Lernplan
